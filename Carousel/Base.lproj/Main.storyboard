@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zd4-C6-MuQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cOH-oC-jQB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zd4-C6-MuQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JJD-Uy-dRo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="crG-kb-MgM" kind="relationship" relationship="rootViewController" id="gfX-nW-Ibk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzh-YI-O3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="98"/>
+        </scene>
+        <!--Carousel Collection View Controller-->
+        <scene sceneID="ogn-Lu-MIt">
+            <objects>
+                <viewController id="crG-kb-MgM" customClass="CarouselCollectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c0M-tf-fnC"/>
+                        <viewControllerLayoutGuide type="bottom" id="xgl-Fy-1O4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TUj-Jy-GWd">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ala-z9-pdx">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2L-cD-ZWq" customClass="CarouselCollectionViewLayout">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="crG-kb-MgM" id="jcb-CT-skY"/>
+                                    <outlet property="delegate" destination="crG-kb-MgM" id="gK3-bl-cxo"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ala-z9-pdx" secondAttribute="bottom" id="9ny-00-hil"/>
+                            <constraint firstItem="ala-z9-pdx" firstAttribute="top" secondItem="TUj-Jy-GWd" secondAttribute="top" id="Aqx-Ri-vAL"/>
+                            <constraint firstItem="ala-z9-pdx" firstAttribute="leading" secondItem="TUj-Jy-GWd" secondAttribute="leading" id="WCA-rN-eSx"/>
+                            <constraint firstAttribute="trailing" secondItem="ala-z9-pdx" secondAttribute="trailing" id="dtD-7s-tXN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VEk-cF-Xsh"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ala-z9-pdx" id="mOW-du-oQ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8w-qe-Mra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="233"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
